@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  Inventariar Predio
+{% endblock %}
+
+{% block body %}
+<!-- FORM -->
+    
+    <!-- MESSAGE -->
+    {% include 'partials/_message.html' %}
+
+    <!-- FORM -->
+    <div class="card bg-indigo container py-7">
+      <div class="row container-fluid ms-5 py-5 col-md-11">
+        <img src="https://gestion.pe/resizer/82U4DJAiw8zQ8QFY8P1A3HqACu4=/640x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/KGLDGII6VFFCBMBQIPZT2Z74TU.jpg" class="rounded" alt="200x200"></img>
+      </div>
+      {%  include 'partials/_taskForm.html' %}
+    </div>
+  
+{% endblock %}
+
+
+

@@ -1,0 +1,294 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+{% if contact_type == 'predio' %}
+<!-- predio -->
+<div class="col-md-4 offset-md-4">
+    <div class="card card-body text-white" style="background-color: #1C4C96;">
+      <h1>Editar Predio</h1>
+  
+      <form action="{{ url_for('contacts.update_predio', id=contact.id_predio) }}" method="POST">
+        <div class="mb-3">
+          <label for="id_predio">Escriba el ID del predio:</label>
+          <input
+            type="text"
+            name="id_predio"
+            value="{{ contact.id_predio }}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="id_tipo_predio">Escriba el ID del tipo de predio:</label>
+          <input
+            type="text"
+            name="id_tipo_predio"
+            value="{{ contact.id_tipo_predio }}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="descripcion">Escriba la descripción del predio:</label>
+          <input
+            type="text"
+            name="descripcion"
+            value="{{ contact.descripcion }}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="ruc">Escriba el RUC del predio:</label>
+          <input
+            type="text"
+            name="ruc"
+            value="{{ contact.ruc }}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="telefono">Escriba el teléfono del predio:</label>
+          <input
+            type="text"
+            name="telefono"
+            value="{{ contact.telefono }}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="correo">Escriba el correo del predio:</label>
+          <input
+            type="text"
+            name="correo"
+            value="{{ contact.correo }}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="direccion">Escriba la dirección del predio:</label>
+          <input
+            type="text"
+            name="direccion"
+            value="{{ contact.direccion }}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="idubigeo">Escriba el ID del ubigeo:</label>
+          <input
+            type="text"
+            name="idubigeo"
+            value="{{ contact.idubigeo }}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+  
+        <button class="btn btn-dark">Actualizar</button>
+      </form>
+    </div>
+  </div>
+
+{% elif contact_type == 'predio_area_comun' %}
+<!-- predio_area_comun -->
+
+<div class="col-md-4 offset-md-4">
+    <div class="card card-body text-white" style="background-color: #1C4C96;">
+      <h1>Editar Área común</h1>
+  
+      <form action="{{ url_for('contacts.predio_area_comun', id=contact.predio_area_comun) }}" method="POST">
+        <div class="mb-3">
+          <label for="id_predio">Escriba el ID del predio:</label>
+          <input
+            type="text"
+            name="id_predio"
+            value="{{contact.id_predio}}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="id_area_comun">Escriba el ID del área común:</label>
+          <input
+            type="text"
+            name="id_area_comun"
+            value="{{contact.id_area_comun}}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="codigo">Escriba el codigo del área común:</label>
+          <input
+            type="text"
+            name="codigo"
+            value="{{contact.codigo}}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="area">Escriba la dimension del área común<noscript></noscript>:</label>
+          <input
+            type="text"
+            name="area"
+            value="{{contact.area}}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+  
+        <button class="btn btn-dark">Actualizar</button>
+      </form>
+    </div>
+  </div>
+
+{% elif contact_type == 'predio_mdu' %}
+<!-- predio_mdu -->
+<div class="col-md-4 offset-md-4">
+    <div class="card card-body  text-white" style="background-color: #1C4C96;">
+      <h1>Editar Predio MDU</h1>
+  
+      <form action="{{ url_for('contacts.predio_mdu', id=contact.predio_mdu) }}" method="POST">
+        <div class="mb-3">
+          <label for="id_predio_mdu">Escriba el ID del predio MDU:</label>
+          <input
+            type="text"
+            name="id_predio_mdu"
+            value="{{contact.id_predio_mdu}}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="id_predio">Escriba el ID del predio:</label>
+          <input
+            type="text"
+            name="id_predio"
+            value="{{contact.id_predio}}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="id_mdu">Escriba el ID del MDU:</label>
+          <input
+            type="text"
+            name="id_mdu"
+            value="{{contact.id_mdu}}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="descripcion">Escriba la descripcion del predio MDU<noscript></noscript>:</label>
+          <input
+            type="text"
+            name="descripcion"
+            value="{{contact.descripcion}}"
+            class="form-control bg-white text-black rounded-0"
+          />
+        </div>
+        <div class="mb-3">
+            <label for="direccion">Escriba la direccion del predio MDU<noscript></noscript>:</label>
+            <input
+              type="text"
+              name="direccion"
+              value="{{contact.direccion}}"
+              class="form-control bg-white text-black rounded-0"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="numero">Escriba el numero del predio MDU<noscript></noscript>:</label>
+            <input
+              type="text"
+              name="numero"
+              value="{{contact.numero}}"
+              class="form-control bg-white text-black rounded-0"
+            />
+        </div>
+  
+        <button class="btn btn-dark">Actualizar</button>
+      </form>
+    </div>
+  </div>
+
+  {% elif contact_type == 'casa' %}
+  <!-- casa -->
+  <div class="col-md-4 offset-md-4">
+      <div class="card card-body text-white" style="background-color: #1C4C96;">
+        <h1>Editar Casa</h1>
+    
+        <form action="{{ url_for('contacts.update_casa', id=contact.id_casa) }}" method="POST">
+          <div class="mb-3">
+            <label for="id_casa">Escriba el ID de la casa:</label>
+            <input
+              type="text"
+              name="id_casa"
+              value="{{ contact.id_casa }}"
+              class="form-control bg-white text-black rounded-0"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="id_predio">Escriba el ID del predio:</label>
+            <input
+              type="text"
+              name="id_predio"
+              value="{{ contact.id_predio }}"
+              class="form-control bg-white text-black rounded-0"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="id_estado">Escriba el ID del estado:</label>
+            <input
+              type="text"
+              name="id_estado"
+              value="{{ contact.id_estado }}"
+              class="form-control bg-white text-black rounded-0"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="id_predio_mdu">Escriba el ID del predio MDU:</label>
+            <input
+              type="text"
+              name="id_predio_mdu"
+              value="{{ contact.id_predio_mdu }}"
+              class="form-control bg-white text-black rounded-0"
+            />
+          </div>
+          <div class="mb-3">
+              <label for="numero">Escriba el número de la casa:</label>
+              <input
+                type="text"
+                name="numero"
+                value="{{ contact.numero }}"
+                class="form-control bg-white text-black rounded-0"
+              />
+          </div>
+          <div class="mb-3">
+              <label for="piso">Escriba el piso de la casa:</label>
+              <input
+                type="text"
+                name="piso"
+                value="{{ contact.piso }}"
+                class="form-control bg-white text-black rounded-0"
+              />
+          </div>
+          <div class="mb-3">
+              <label for="area">Escriba el área de la casa:</label>
+              <input
+                type="text"
+                name="area"
+                value="{{ contact.area }}"
+                class="form-control bg-white text-black rounded-0"
+              />
+          </div>
+          <div class="mb-3">
+              <label for="participacion">Escriba la participación de la casa:</label>
+              <input
+                type="text"
+                name="participacion"
+                value="{{ contact.participacion }}"
+                class="form-control bg-white text-black rounded-0"
+              />
+          </div>
+  
+          <button class="btn btn-dark">Actualizar</button>
+        </form>
+      </div>
+    </div>
+  {% endif %}
+  
+
+{% endblock %}
